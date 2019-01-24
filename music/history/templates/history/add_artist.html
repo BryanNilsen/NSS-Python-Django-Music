@@ -1,0 +1,7 @@
+<h1>Add New artist</h1>
+<form action="{% url 'history:post_artist' %}" method="POST">
+  {% csrf_token %}
+    <label for="artist_name">Artist Name:</label>
+    <input id="artist_name" type="text" name="artist_name">
+    <input type="submit" value="OK">
+</form>

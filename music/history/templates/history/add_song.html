@@ -1,0 +1,16 @@
+<h1>Add New Song</h1>
+<form action="{% url 'history:post_song' %}" method="POST">
+  {% csrf_token %}
+    <label for="song_title">Song Title:</label>
+    <input id="song_title" type="text" name="song_title">
+
+
+    <label for="artist">Artist:</label>
+    <select name="selected_artist">
+      {% for artist in artist_list %}
+      <option value="{{artist.id}}" id="{{artist.id}}">{{artist.artist_name}}</option>
+      {% endfor %}
+    </select>
+
+    <input type="submit" value="OK">
+</form>

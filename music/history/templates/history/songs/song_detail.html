@@ -1,0 +1,7 @@
+{% if song %}
+    <ul>
+        <li>{{ song.song_title }} by <a href="/history/{{ song.artist_id }}/">{{ song.artist.artist_name }}</a></li>
+    </ul>
+{% else %}
+    <p>No artists in the database.</p>
+{% endif %}

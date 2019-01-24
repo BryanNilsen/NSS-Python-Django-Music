@@ -1,0 +1,14 @@
+{% if artist %}
+    <p>{{ artist.artist_name }}</p>
+    <ul>
+    {% for song in songs %}
+        <li><a href="/history/songs/{{ song.id }}/">{{ song.song_title }}</a></li>
+    {% endfor %}
+    </ul>
+
+    <p><a href="{% url 'history:add_song_form' %}">add song</a></p>
+
+
+{% else %}
+    <p>No artists in the database.</p>
+{% endif %}
